@@ -11,59 +11,53 @@ void Program();
 void About();
 
 int main () {
-    Ngulang_Balik_lagi:
-    int input_2 = getPilihanMenu();
-    enum opsi{Program_Generator = 1, Tentang_Program, Keluar}; 
-    if (input_2 < 1 || input_2 > 3){
-        cout << "___________" << endl;
-        cout << "Pilihan Tidak Ditemukan, PILIH YANG BENER DONGGGGGGGG!!!" << endl;
-        cout << "___________" << endl;
-    }
-        else if (input_2 == Program_Generator){
-            Program();
-        }
-        else if (input_2 == Tentang_Program){
-            About();
-        }
-        else if (input_2 == Keluar){
-            char lanjut_or_enggak;
-            Takut_Ada_Yang_Usil:
-            cout << "___________" << endl;
-            cout << "Apakah Anda Ingin Melanjutkan Keluar Dari Program Ini ? (y/n) = ";
-            cin >> lanjut_or_enggak;
-            if ((lanjut_or_enggak == 'y' | lanjut_or_enggak == 'Y')){
-                cout << "___________" << endl;
-                cout << "Bye Bye.., Sampai Jumpa Kembali" << endl;
-                cout << "Terima Kasih Telah Memakai Program Kami..." << endl;
-                cout << "___________" << endl;
-                }
-                else if ((lanjut_or_enggak == 'n' | lanjut_or_enggak == 'N')){
-                    goto Ngulang_Balik_lagi; 
-                }
-                else {
-                    goto Takut_Ada_Yang_Usil;
-                }
-    }
-    return 0;
+	Ngulang_Balik_lagi:
+	int input_2 = getPilihanMenu();
+	enum opsi{Program_Generator = 1, Tentang_Program, Keluar}; 
+	if (input_2 < 1 || input_2 > 3){
+		cout << "----------------------------------------------------" << endl;
+		cout << "Pilihan Tidak Ditemukan, PILIH 1-3" << endl;
+		cout << "----------------------------------------------------" << endl;
+	} else if (input_2 == Program_Generator){
+		Program();
+	} else if (input_2 == Tentang_Program){
+		About();
+        } else if (input_2 == Keluar){
+		char lanjut_or_enggak;
+		Takut_Ada_Yang_Usil:
+		cout << "----------------------------------------------------" << endl;
+		cout << "Apakah Anda Ingin Melanjutkan Keluar Dari Program Ini ? (y/n) = ";
+		cin >> lanjut_or_enggak;
+		if ((lanjut_or_enggak == 'y' | lanjut_or_enggak == 'Y')){
+			cout << "----------------------------------------------------" << endl;
+			cout << "Bye Bye.., Sampai Jumpa Kembali" << endl;
+			cout << "Terima Kasih Telah Memakai Program Kami..." << endl;
+			cout << "----------------------------------------------------" << endl;
+                } else if ((lanjut_or_enggak == 'n' | lanjut_or_enggak == 'N')){
+			goto Ngulang_Balik_lagi; 
+                } else {
+			goto Takut_Ada_Yang_Usil;
+		}
+	}
+	return 0;
 }
 
 
 int getPilihanMenu (){
-    int input;
-    cout << "SELAMAT DATANG DI PROGRAM RANDOM GENERATOR PASSWORD" << endl; 
+	int input;
+	cout << "SELAMAT DATANG DI PROGRAM RANDOM GENERATOR PASSWORD" << endl;
 	cout << "1. Program Random Generator Password" << endl;
-    cout << "2. Tentang Program Kami" << endl;
+	cout << "2. Tentang Program Kami" << endl;
 	cout << "3. Keluar" << endl;
-	cout << "____________________________________________________" << endl;
+	cout << "----------------------------------------------------" << endl;
 	cout << "Silahkan Pilih Menu [1-3] = ";
 	cin >> input;
-    return input;
+	return input;
 }
 
-void Program()
-{
-    cout << "___________" << endl;
-    cout << "___________" << endl;
+void Program(){
+    cout << "----------------------------------------------------" << endl;
+    cout << "----------------------------------------------------" << endl;
     char alphanum[] = "0123456789!#$%&*()/-+abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     int length_alphanum = sizeof(alphanum)-1;
     int panjang_password;
@@ -83,11 +77,11 @@ void Program()
         cout << alphanum[k] << " ";
     }
     cout << endl;
-    cout << "___________" << endl;
+    cout << "----------------------------------------------------" << endl;
 
     cout << "Masukkan Panjang Password yang Diinginkan = ";
     cin >> panjang_password;
-    cout << "___________" << endl;
+    cout << "----------------------------------------------------" << endl;
 
     char tmp_pass_char[panjang_password];
     string data_pass_str = "";
@@ -113,7 +107,7 @@ void Program()
         ofstream fileResult_1;
             fileResult_1.open("Pilihan ke-1_Generator_Password.txt");
                 fileResult_1 << "Hasil Pilihan ke-1 dari Program Generator Password Adalah : "<< endl;
-                fileResult_1 << "___________________________________________________________"<< endl;
+                fileResult_1 << "----------------------------------------------------"<< endl;
                     fileResult_1 << data_pass_str;
             fileResult_1.close();
         
@@ -136,7 +130,7 @@ void Program()
         ofstream fileResult_2;
             fileResult_2.open("Pilihan ke-2_Generator_Password.txt");
                 fileResult_2 << "Hasil Pilihan ke-2 dari Program Generator Password Adalah : "<< endl;
-                fileResult_2 << "___________________________________________________________"<< endl;
+                fileResult_2 << "----------------------------------------------------"<< endl;
                     for (int k = 0; k < panjang_password; k++){
                     fileResult_2 << char_array[k];
                 } 
@@ -159,7 +153,7 @@ void Program()
     ofstream fileResult_3;
             fileResult_3.open("Pilihan ke-3_Generator_Password.txt");
                 fileResult_3 << "Hasil Pilihan ke-3 dari Program Generator Password Adalah : "<< endl;
-                fileResult_3 << "___________________________________________________________"<< endl;
+                fileResult_3 << "----------------------------------------------------"<< endl;
                     for (int k = 0; k < panjang_password; k++){
                     fileResult_3 << char_array[k];
                 } 
@@ -186,7 +180,7 @@ void Program()
         ofstream fileResult_4;
             fileResult_4.open("Pilihan ke-4_Generator_Password.txt");
                 fileResult_4 << "Hasil Pilihan ke-4 dari Program Generator Password Adalah : "<< endl;
-                fileResult_4 << "___________________________________________________________"<< endl;
+                fileResult_4 << "----------------------------------------------------"<< endl;
                     for (int k = 0; k < panjang_password; k++){
                         if(k%2==0){
                             fileResult_4 << char_array[k];
@@ -231,7 +225,7 @@ void Program()
         ofstream fileResult_5;
             fileResult_5.open("Pilihan ke-4_Generator_Password.txt");
                 fileResult_5 << "Hasil Pilihan ke-4 dari Program Generator Password Adalah : "<< endl;
-                fileResult_5 << "___________________________________________________________"<< endl;
+                fileResult_5 << "----------------------------------------------------"<< endl;
                     for (int k = 0; k < panjang_password; k++){
                         if(k%2==0){
                             fileResult_5 << char_array[k];
@@ -280,7 +274,7 @@ void Program()
         ofstream fileResult_6;
             fileResult_6.open("Pilihan ke-5_Generator_Password.txt");
                 fileResult_6 << "Hasil Pilihan ke-5 dari Program Generator Password Adalah : "<< endl;
-                fileResult_6 << "___________________________________________________________"<< endl;
+                fileResult_6 << "----------------------------------------------------"<< endl;
                     for (int k = 0; k < panjang_password; k++){
                         if(k%2==0){
                             fileResult_6 << char_array[k];
@@ -325,7 +319,7 @@ void Program()
         ofstream fileResult_7;
             fileResult_7.open("Pilihan ke-5_Generator_Password.txt");
                 fileResult_7 << "Hasil Pilihan ke-5 dari Program Generator Password Adalah : "<< endl;
-                fileResult_7 << "___________________________________________________________"<< endl;
+                fileResult_7 << "----------------------------------------------------"<< endl;
                     for (int k = 0; k < panjang_password; k++){
                         if(k%2==0){
                             fileResult_7 << char_array[k];
@@ -353,18 +347,17 @@ void Program()
             fileResult_7.close();
     }
     
-    cout << endl;
-    cout << "___________" << endl;
-    cout << "Bye Bye.., Sampai Jumpa Kembali" << endl;
-    cout << "Terima Kasih Telah Memakai Program Kami & Silahkan Check File Txt nya..." << endl;
+	cout << endl;
+	cout << "----------------------------------------------------" << endl;
+	cout << "Bye Bye.., Sampai Jumpa Kembali" << endl;
+	cout << "Terima Kasih Telah Memakai Program Kami & Silahkan Check File Txt nya..." << endl;
+	cout << "====================================================" << endl;
 }
 
 void About (){
-    cout << "___________" << endl;
-    cout << "___________" << endl;
-    cout << "__________________________________________________________" << endl;
-    cout << R"(
-    Program ini di develop oleh kelompok 1 yang beranggotakan Dhimaz Purnama Adjhi dan Salman untuk memenuhi tugas UAS pada mata kuliah Stuktur Data dan Algoritma prodi Teknik Komputer. Program ini nantinya diharapkan untuk membuat password random agar sang pengguna meminimalisir terjadinya terkena serangan bruteforce pada kredensial pengguna. Karena emakin random password yang kita gunakan, makan akan semakin sulit password kita untuk ditembus oleh serangan bruteforce.
-)" << endl;
-    cout << "_______" << endl;
+	cout << "----------------------------------------------------" << endl;
+	cout << "----------------------------------------------------" << endl;
+	cout << "----------------------------------------------------" << endl;
+	cout << R"(Program ini di develop oleh kelompok 1 yang beranggotakan Dhimaz Purnama Adjhi dan Salman Abdul Jabbaar Wiharja untuk memenuhi tugas UAS pada mata kuliah Stuktur Data dan Algoritma prodi Teknik Komputer. Program ini nantinya diharapkan untuk membuat password random agar pengguna meminimalisir terjadinya terkena serangan bruteforce pada kredensial pengguna. Karena emakin random password yang kita gunakan, makan akan semakin sulit password kita untuk ditembus oleh serangan bruteforce.)" << endl;
+	cout << "====================================================" << endl;
 }
